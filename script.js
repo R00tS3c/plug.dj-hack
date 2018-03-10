@@ -29,17 +29,6 @@ HACK_CONFIG.sub = 1;
 HACK_CONFIG.badge = 'admin-o01';
 //HACK_CONFIG.minimum_role = 0;
 
-HACK_CONFIG.gRole = 0;
-HACK_CONFIG.tastycat_avatar = false;
-HACK_CONFIG.avatar = 'rave07';
-HACK_CONFIG.sub = 1;
-HACK_CONFIG.badge = 'animal-o13';
-HACK_CONFIG.minimum_role = 3;
-HACK_CONFIG.id = 4684278;
-HACK_CONFIG.username = "Fungus";
-HACK_CONFIG.slug = "fungus";
-*/
-// Don't edit below unless you know what you're doing.
 
 var apply = function() {
     if (window["$"] == undefined) {
