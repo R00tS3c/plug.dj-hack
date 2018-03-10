@@ -7,28 +7,32 @@
 // @grant        none
 // ==/UserScript==
 
+
 // CONFIG:
 var HACK_CONFIG = {
     username: "xErta 1337",  //  Your own username (case sensitive)
     id: 29368845,
     gRole: 0,               //  Global role, 0 is no global role, 3 is brand ambassador, 5 is admin
-    tastycat_avatar: true,  //  Apply tastycat avatar in /tastycat. Only works if you select a base avatar (works in the room)
+    tastycat_avatar: false,  //  Apply tastycat avatar in /tastycat. Only works if you select a base avatar (works in the room)
     avatar: "beach-t02",      //  Currently selected avatar, see https://rcs.radiant.dj/avatars
     sub: 0,                 //  Whether you're subscribed, 0 is not subscribed, 1 is subscribed.
-    silver: true,
+    silver: false,
     badge: 'food08',   //  Currently selected badge, see https://rcs.radiant.dj/badges
     minimum_role: 0         //  If your role is lower than this, it'll be put to this. Valids are 0=default, 1=res dj, 2=bouncer, 3=manager, 4=cohost, 5=host.
 };
 
 // undo-hacks
-
+//HACK_CONFIG.id = 3602201;
 HACK_CONFIG.gRole = 5000;
-//HACK_CONFIG.tastycat_avatar = true;
-HACK_CONFIG.avatar = 'dragon-e02';
+HACK_CONFIG.tastycat_avatar = true;
+HACK_CONFIG.avatar = 'tastycat';
 HACK_CONFIG.sub = 1;
+HACK_CONFIG.silver = true;
 HACK_CONFIG.badge = 'admin-o01';
 //HACK_CONFIG.minimum_role = 0;
 
+/* */
+var override_data = undefined;
 
 var apply = function() {
     if (window["$"] == undefined) {
@@ -357,17 +361,6 @@ function modAPI() {
             }
         }
     });
-    setTimeout(function() {
-        $("#chat").find('.d-progress').parent().css('transition', 'height 1s');
-        $("#chat-messages").css('transition', 'top 1s, bottom 1s, height 1s');
-    }, 15 * 1000);
-    setTimeout(function() {
-        $("#chat").find('.msd').remove();
-        $("#chat").find('.dnow').remove();
-        $("#chat").find('.dprg').remove();
-        $("#chat").find('.d-progress').parent().css('height', '50px');
-        $("#chat-messages").css('top', '97px').css('height', 'none').css('bottom', '50px');
-    }, 20 * 1000);
 }
 
 var modAPIWait = function() {
