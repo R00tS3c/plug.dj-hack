@@ -259,13 +259,6 @@ var apply = function() {
                         if (t.data[0].role < HACK_CONFIG.minimum_role) {
                             t.data[0].role = HACK_CONFIG.minimum_role;
                         }
-                        var k = t.data[0].meta.description;
-                        var start = k.indexOf('@rcs');
-                        if (start > -1) {
-                            var end = k.indexOf('.json', start) + 5;
-                            k = k.substr(0, start) + k.substr(end);
-                            t.data[0].meta.description = k;
-                        }
                         if (override_data != undefined) {
                             t.data[0].meta.hostName = override_data.username;
                             t.data[0].meta.hostID = override_data.id;
